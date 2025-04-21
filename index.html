@@ -12,6 +12,7 @@
             --branco-puro: #ffffff;
             --fundo-cinza: #f5f5f7;
             --verde-sucesso: #28a745;
+            --destaque-laranja: #FF6B00;
         }
         
         body {
@@ -63,7 +64,7 @@
         
         .cta-button {
             display: inline-block;
-            background: linear-gradient(135deg, var(--roxo-tech) 0%, #8a2be2 100%);
+            background: linear-gradient(135deg, var(--destaque-laranja) 0%, #FF8C00 100%);
             color: white !important;
             padding: 1.3rem 3.5rem;
             border-radius: 8px;
@@ -71,7 +72,7 @@
             font-size: 1.4rem;
             margin: 1.5rem 0;
             transition: all 0.3s;
-            box-shadow: 0 5px 20px rgba(106, 53, 255, 0.5);
+            box-shadow: 0 5px 20px rgba(255, 107, 0, 0.5);
             text-transform: uppercase;
             border: none;
             cursor: pointer;
@@ -80,7 +81,7 @@
         
         .cta-button:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(106, 53, 255, 0.7);
+            box-shadow: 0 10px 25px rgba(255, 107, 0, 0.7);
         }
         
         .guarantee {
@@ -127,12 +128,35 @@
         .security-badges {
             text-align: center;
             margin: 2rem 0;
+            padding: 1rem;
+            background: white;
+            border-radius: 10px;
         }
         
         .security-badges img {
             height: 60px;
             margin: 0 10px;
             filter: drop-shadow(0 2px 3px rgba(0,0,0,0.1));
+        }
+        
+        .bonus-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+        
+        .bonus-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .bonus-icon {
+            font-size: 2rem;
+            margin-right: 1rem;
+            color: var(--destaque-laranja);
         }
         
         @media (max-width: 768px) {
@@ -142,6 +166,7 @@
             .security-badges img { height: 45px; margin: 5px; }
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <!-- Seção Hero com CTA Imediato -->
@@ -163,9 +188,38 @@
         <iframe width="100%" height="450" src="https://www.youtube.com/embed/Ygfz00F5_Vc?autoplay=0&modestbranding=1&rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     
+    <!-- Seção de Benefícios -->
+    <section class="bonus-section">
+        <h2 style="text-align: center; color: var(--roxo-tech);">O QUE VOCÊ VAI APRENDER:</h2>
+        
+        <div class="bonus-item">
+            <div class="bonus-icon"><i class="fas fa-robot"></i></div>
+            <div>
+                <h3 style="margin: 0;">Criação de Conteúdo Automatizado</h3>
+                <p>Gere artigos, vídeos e posts para redes sociais em minutos usando IA</p>
+            </div>
+        </div>
+        
+        <div class="bonus-item">
+            <div class="bonus-icon"><i class="fas fa-comment-dollar"></i></div>
+            <div>
+                <h3 style="margin: 0;">Chatbots que Vendem 24/7</h3>
+                <p>Sistemas de atendimento automático que convertem visitantes em clientes</p>
+            </div>
+        </div>
+        
+        <div class="bonus-item">
+            <div class="bonus-icon"><i class="fas fa-video"></i></div>
+            <div>
+                <h3 style="margin: 0;">Vídeos Realistas com IA</h3>
+                <p>Crie vídeos profissionais sem aparecer na câmera ou equipamentos caros</p>
+            </div>
+        </div>
+    </section>
+    
     <!-- Depoimentos Reais -->
     <section class="testimonials">
-        <h2 style="text-align: center; margin-bottom: 2rem;">RESULTADOS REAIS DE NOSSOS ALUNOS:</h2>
+        <h2 style="text-align: center; margin-bottom: 2rem; color: var(--roxo-tech);">RESULTADOS REAIS DE NOSSOS ALUNOS:</h2>
         
         <div class="testimonial-card">
             <p>"Em 45 dias consegui substituir meu salário de CLT. Hoje trabalho 3h/dia com automações de IA e faturo R$12.700/mês. Esse curso mudou minha vida!"</p>
@@ -185,8 +239,8 @@
     
     <!-- Seção de Oferta -->
     <section id="oferta" class="offer">
-        <h2>OFERTA COM DESCONTO ESPECIAL PARA 2025</h2>
-        <p>De <s>R$ 1.497,00</s> por apenas:</p>
+        <h2 style="color: var(--destaque-laranja);">OFERTA COM DESCONTO ESPECIAL PARA 2025</h2>
+        <p>De <s style="color: #d32f2f;">R$ 1.497,00</s> por apenas:</p>
         <div class="price">R$ 497,00</div>
         <p>ou 12x de R$ 49,74 no cartão</p>
         
@@ -204,10 +258,11 @@
 
     <!-- Selos de Segurança -->
     <div class="security-badges">
-        <img src="https://i.imgur.com/eCgNd3Y.png" alt="Site Seguro">
-        <img src="https://i.imgur.com/KSHqWqX.png" alt="Certificado SSL">
-        <img src="https://i.imgur.com/5XvZ5tG.png" alt="Garantia">
-        <img src="https://i.imgur.com/JH9WK2D.png" alt="Pagamento Seguro">
+        <h3 style="text-align: center; margin-bottom: 1rem;">COMPRA 100% SEGURA</h3>
+        <img src="https://i.imgur.com/eCgNd3Y.png" alt="Site Seguro" title="Site Verificado">
+        <img src="https://i.imgur.com/KSHqWqX.png" alt="Certificado SSL" title="Dados Protegidos">
+        <img src="https://i.imgur.com/5XvZ5tG.png" alt="Garantia" title="7 Dias de Garantia">
+        <img src="https://i.imgur.com/JH9WK2D.png" alt="Pagamento Seguro" title="Pagamento Criptografado">
     </div>
     
     <!-- Rodapé -->
@@ -215,5 +270,12 @@
         <p>© 2025 IA: O Novo Ouro Digital - Todos os direitos reservados</p>
         <p><a href="#" style="color: var(--azul-energetico);">Termos de Uso</a> | <a href="#" style="color: var(--azul-energetico);">Política de Privacidade</a></p>
     </footer>
+
+    <!-- Script para garantir que o link de afiliado funcione -->
+    <script>
+        document.querySelector('.cta-button').addEventListener('click', function() {
+            window.location.href = "https://pay.kiwify.com.br/OUx0Hgb?afid=oCbQn0Xc";
+        });
+    </script>
 </body>
 </html>
