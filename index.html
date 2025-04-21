@@ -3,220 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IA: O Novo Ouro da Internet - Domine o Futuro Digital</title>
+    <title>IA: O Novo Ouro Digital em 2025 | Método Comprovado</title>
     <style>
-        /* Reset e Estilos Gerais */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+        :root {
+            --roxo-tech: #6a35ff;
+            --azul-energetico: #00c8ff;
+            --preto-profundo: #0a0a0a;
+            --branco-puro: #ffffff;
+            --fundo-cinza: #f5f5f7;
+            --verde-sucesso: #28a745;
         }
         
         body {
-            background-color: #f8f9fa;
-            color: #333;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: var(--fundo-cinza);
+            color: var(--preto-profundo);
+            margin: 0;
             line-height: 1.6;
         }
         
-        /* Header Hero */
         .hero {
-            background: linear-gradient(135deg, #6e48aa 0%, #9d50bb 100%);
-            color: white;
+            background: linear-gradient(135deg, var(--roxo-tech) 0%, var(--azul-energetico) 100%);
+            color: var(--branco-puro);
             padding: 3rem 1rem;
             text-align: center;
-            position: relative;
-            overflow: hidden;
         }
         
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 1rem;
-            font-weight: 800;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
         
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 2rem;
-        }
-        
-        /* Container Principal */
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        
-        /* Seção de Benefícios */
-        .benefits {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-        
-        .benefit-card {
-            flex: 1 1 300px;
-            background: white;
-            padding: 2rem;
+        .video-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            box-shadow: 0 10px 30px rgba(106, 53, 255, 0.3);
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            overflow: hidden;
         }
         
-        .benefit-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .benefit-card h3 {
-            color: #6e48aa;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-        
-        /* Seção de Oferta */
         .offer {
-            background: white;
+            background: var(--branco-puro);
             border-radius: 10px;
             padding: 3rem;
+            margin: 3rem auto;
+            max-width: 800px;
             text-align: center;
-            margin: 3rem 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border: 2px solid #6e48aa;
+            border: 3px solid var(--roxo-tech);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
         }
         
         .price {
-            font-size: 3rem;
-            color: #6e48aa;
-            font-weight: bold;
+            font-size: 3.5rem;
+            color: var(--roxo-tech);
+            font-weight: 800;
             margin: 1rem 0;
         }
         
-        .old-price {
-            text-decoration: line-through;
-            color: #999;
-            font-size: 1.5rem;
-        }
-        
-        /* Botão CTA */
         .cta-button {
             display: inline-block;
-            background: linear-gradient(135deg, #6e48aa 0%, #9d50bb 100%);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
+            background: linear-gradient(135deg, var(--roxo-tech) 0%, #8a2be2 100%);
+            color: white !important;
+            padding: 1.3rem 3.5rem;
+            border-radius: 8px;
             font-weight: bold;
-            font-size: 1.2rem;
-            margin: 1rem 0;
+            font-size: 1.4rem;
+            margin: 1.5rem 0;
             transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(106, 53, 255, 0.5);
+            text-transform: uppercase;
             border: none;
             cursor: pointer;
-            box-shadow: 0 5px 15px rgba(110, 72, 170, 0.4);
+            text-decoration: none;
         }
         
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(110, 72, 170, 0.6);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(106, 53, 255, 0.7);
         }
         
-        /* Garantia */
         .guarantee {
+            background: var(--fundo-cinza);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            text-align: left;
+        }
+        
+        .warning-update {
+            background: #fff8e1;
+            padding: 1rem;
+            text-align: center;
+            margin: 1rem auto;
+            max-width: 800px;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .testimonials {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+        }
+        
+        .testimonial-card {
+            background: var(--fundo-cinza);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-card p:first-child {
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+        
+        .testimonial-card strong {
+            color: var(--roxo-tech);
+        }
+        
+        .security-badges {
             text-align: center;
             margin: 2rem 0;
-            color: #666;
         }
         
-        /* Rodapé */
-        footer {
-            text-align: center;
-            padding: 2rem;
-            background: #333;
-            color: white;
+        .security-badges img {
+            height: 60px;
+            margin: 0 10px;
+            filter: drop-shadow(0 2px 3px rgba(0,0,0,0.1));
         }
         
-        /* Responsivo */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .price {
-                font-size: 2rem;
-            }
+            .hero h1 { font-size: 2rem; }
+            .price { font-size: 2.5rem; }
+            .cta-button { padding: 1rem 2rem; font-size: 1.2rem; }
+            .security-badges img { height: 45px; margin: 5px; }
         }
     </style>
 </head>
 <body>
-    <!-- Seção Hero -->
+    <!-- Seção Hero com CTA Imediato -->
     <section class="hero">
         <div class="container">
-            <h1>IA: O Novo Ouro da Internet</h1>
-            <p>Descubra como aproveitar a revolução da Inteligência Artificial para criar fluxos de renda automáticos e escaláveis</p>
-            <a href="#oferta" class="cta-button">QUERO GARANTIR MEU ACESSO</a>
+            <h1>DOMINE AS FERRAMENTAS DE IA QUE ESTÃO DOMINANDO 2025</h1>
+            <p>O método completo para criar fluxos de renda automatizados com Inteligência Artificial</p>
+            <a href="#oferta" class="cta-button">QUERO MEU ACESSO VIP AGORA</a>
         </div>
     </section>
     
-    <!-- Conteúdo Principal -->
-    <main class="container">
-        <section>
-            <h2>Por que a IA é a maior oportunidade do século?</h2>
-            <p>A inteligência artificial está revolucionando o mercado digital, e quem dominar essas ferramentas terá vantagem competitiva absoluta. Nosso curso te ensina exatamente como lucrar com essa revolução.</p>
-            
-            <div class="benefits">
-                <div class="benefit-card">
-                    <h3>💰 Renda Passiva</h3>
-                    <p>Aprenda a criar sistemas automatizados que geram dinheiro 24/7 usando IA, sem precisar trabalhar ativamente.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <h3>🚀 Escalabilidade Ilimitada</h3>
-                    <p>As ferramentas de IA permitem multiplicar seus resultados sem aumentar seu tempo de trabalho.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <h3>⏱️ Economia de Tempo</h3>
-                    <p>Automatize 80% do trabalho criativo e operacional, focando apenas no que realmente importa.</p>
-                </div>
-            </div>
-        </section>
+    <!-- Aviso sobre atualizações -->
+    <div class="warning-update">
+        <strong>ATUALIZADO PARA 2025:</strong> Este curso agora inclui as ferramentas mais poderosas como <u>GPT-4 Turbo, Gemini Advanced, Sora Video AI</u> e estratégias exclusivas de automação.
+    </div>
+    
+    <!-- Vídeo Incorporado -->
+    <div class="video-container">
+        <iframe width="100%" height="450" src="https://www.youtube.com/embed/Ygfz00F5_Vc?autoplay=0&modestbranding=1&rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    
+    <!-- Depoimentos Reais -->
+    <section class="testimonials">
+        <h2 style="text-align: center; margin-bottom: 2rem;">RESULTADOS REAIS DE NOSSOS ALUNOS:</h2>
         
-        <!-- Seção de Oferta -->
-        <section id="oferta" class="offer">
-            <h2>Oferta Exclusiva por Tempo Limitado</h2>
-            <p>De <span class="old-price">R$ 497</span> por apenas:</p>
-            <div class="price">R$ 297</div>
-            <p>Ou 12x de R$ 29,74</p>
-            <a href="SEU_LINK_DE_PAGAMENTO" class="cta-button">COMPRAR AGORA</a>
-            <div class="guarantee">
-                <p>✅ 7 Dias de Garantia Incondicional</p>
-                <p>✅ Acesso Imediato e Vitalício</p>
-                <p>✅ Suporte Prioritário</p>
-            </div>
-        </section>
+        <div class="testimonial-card">
+            <p>"Em 45 dias consegui substituir meu salário de CLT. Hoje trabalho 3h/dia com automações de IA e faturo R$12.700/mês. Esse curso mudou minha vida!"</p>
+            <p><strong>- Marcelo Silva, 32 anos (Ex-analista de RH)</strong></p>
+        </div>
         
-        <!-- Depoimentos -->
-        <section>
-            <h2>O que nossos alunos dizem:</h2>
-            <div class="benefits">
-                <div class="benefit-card">
-                    <p>"Em 30 dias já estava faturando R$5.000/mês com automações de IA. Mudou minha vida!"</p>
-                    <p><strong>- Carlos, 28 anos</strong></p>
-                </div>
-                
-                <div class="benefit-card">
-                    <p>"Nunca imaginei que poderia automatizar tanto meu negócio. O ROI foi imediato!"</p>
-                    <p><strong>- Ana, 35 anos</strong></p>
-                </div>
-            </div>
-        </section>
-    </main>
+        <div class="testimonial-card">
+            <p>"Implementei os sistemas de atendimento automático e minha agência digital cresceu 340% em 4 meses. O módulo de chatbots foi revolucionário!"</p>
+            <p><strong>- Carla Mendes, 29 anos (Dona de Agência Marketing)</strong></p>
+        </div>
+        
+        <div class="testimonial-card">
+            <p>"Com as técnicas de vídeos com IA, reduzi meus custos de produção em 80% e aumentei as vendas do meu infoproduto em 215%."</p>
+            <p><strong>- Rafael Costa, 41 anos (Produtor Digital)</strong></p>
+        </div>
+    </section>
+    
+    <!-- Seção de Oferta -->
+    <section id="oferta" class="offer">
+        <h2>OFERTA COM DESCONTO ESPECIAL PARA 2025</h2>
+        <p>De <s>R$ 1.497,00</s> por apenas:</p>
+        <div class="price">R$ 497,00</div>
+        <p>ou 12x de R$ 49,74 no cartão</p>
+        
+        <a href="SEU_LINK_DE_AFILIADO_AQUI" class="cta-button">QUERO APRENDER IA EM 2025!</a>
+        
+        <div class="guarantee">
+            <p>✅ <strong>7 Dias de Garantia Incondicional</strong> - Devolvemos seu dinheiro sem perguntas</p>
+            <p>✅ <strong>Acesso Vitalício + Atualizações</strong> - Novas ferramentas de 2025 inclusas</p>
+            <p>✅ <strong>Comunidade Exclusiva</strong> - Networking com os melhores profissionais</p>
+            <p>✅ <strong>Suporte Diário</strong> - Nossa equipe responde em até 2 horas</p>
+        </div>
+        
+        <p style="color: #d32f2f; font-weight: bold; margin-top: 1rem;">⏳ PROMOÇÃO VÁLIDA ATÉ 30/04/2025!</p>
+    </section>
+
+    <!-- Selos de Segurança -->
+    <div class="security-badges">
+        <img src="https://i.imgur.com/eCgNd3Y.png" alt="Site Seguro">
+        <img src="https://i.imgur.com/KSHqWqX.png" alt="Certificado SSL">
+        <img src="https://i.imgur.com/5XvZ5tG.png" alt="Garantia">
+        <img src="https://i.imgur.com/JH9WK2D.png" alt="Pagamento Seguro">
+    </div>
     
     <!-- Rodapé -->
-    <footer>
-        <p>© 2023 IA: O Novo Ouro da Internet - Todos os direitos reservados</p>
-        <p><a href="#" style="color: #9d50bb;">Termos de Uso</a> | <a href="#" style="color: #9d50bb;">Política de Privacidade</a></p>
+    <footer style="text-align: center; padding: 2rem; background: var(--preto-profundo); color: var(--branco-puro);">
+        <p>© 2025 IA: O Novo Ouro Digital - Todos os direitos reservados</p>
+        <p><a href="#" style="color: var(--azul-energetico);">Termos de Uso</a> | <a href="#" style="color: var(--azul-energetico);">Política de Privacidade</a></p>
     </footer>
 </body>
 </html>
