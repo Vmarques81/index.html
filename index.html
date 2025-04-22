@@ -17,171 +17,544 @@
         
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
-            background: var(--fundo-cinza);
-            color: var(--preto-profundo);
             margin: 0;
             line-height: 1.6;
+            background: 
+                linear-gradient(rgba(10, 10, 10, 0.4), 
+                rgba(10, 10, 10, 0.4)),
+                url('images/fundo-principal.jpg') center/cover fixed;
+            min-height: 100vh;
         }
         
+        .content-wrapper {
+            background-color: rgba(255,255,255,0.97);
+            backdrop-filter: blur(3px);
+            min-height: 100vh;
+            position: relative;
+            z-index: 1;
+        }
+
         .hero {
             background: linear-gradient(135deg, var(--roxo-tech) 0%, var(--azul-energetico) 100%);
             color: var(--branco-puro);
-            padding: 3rem 1rem;
+            padding: 4rem 1rem;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('images/tech-pattern.png') center/cover no-repeat;
+            opacity: 0.2;
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
         }
         
         .hero h1 {
             font-size: 2.8rem;
-            margin-bottom: 1rem;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
         }
         
         .video-container {
             max-width: 800px;
-            margin: 2rem auto;
-            box-shadow: 0 10px 30px rgba(106, 53, 255, 0.3);
-            border-radius: 10px;
+            margin: 3rem auto;
+            box-shadow: 0 15px 35px rgba(106, 53, 255, 0.3);
+            border-radius: 15px;
             overflow: hidden;
+            border: 3px solid var(--roxo-tech);
+            position: relative;
+            z-index: 2;
+            background: transparent;
+        }
+        
+        .section {
+            background: var(--branco-puro);
+            border-radius: 15px;
+            padding: 3rem;
+            margin: 3rem auto;
+            max-width: 900px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border: 1px solid rgba(106, 53, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            background: url('images/padrao-decorativo.png') center/contain no-repeat;
+            opacity: 0.05;
+            z-index: 0;
+        }
+        
+        .section-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section h2 {
+            color: var(--roxo-tech);
+            text-align: center;
+            margin-bottom: 2.5rem;
+            font-size: 2.2rem;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section h2::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--roxo-tech), var(--azul-energetico));
+            margin: 0.8rem auto 0;
+            border-radius: 2px;
         }
         
         .offer {
             background: var(--branco-puro);
-            border-radius: 10px;
-            padding: 3rem;
-            margin: 3rem auto;
+            border-radius: 15px;
+            padding: 3.5rem;
+            margin: 4rem auto;
             max-width: 800px;
             text-align: center;
             border: 3px solid var(--roxo-tech);
-            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 40px rgba(106, 53, 255, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .offer::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            background: url('images/padrao-decorativo.png') center/contain no-repeat;
+            opacity: 0.05;
+            z-index: 0;
+        }
+        
+        .offer-content {
+            position: relative;
+            z-index: 1;
         }
         
         .price {
-            font-size: 3.5rem;
+            font-size: 3.8rem;
             color: var(--roxo-tech);
             font-weight: 800;
-            margin: 1rem 0;
+            margin: 1.5rem 0;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .price::before {
+            content: "DE R$ 899,90 POR";
+            font-size: 1.2rem;
+            color: #666;
+            position: absolute;
+            top: -1.8rem;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            text-decoration: line-through;
         }
         
         .cta-button {
             display: inline-block;
             background: linear-gradient(135deg, var(--destaque-laranja) 0%, #FF8C00 100%);
             color: white !important;
-            padding: 1.3rem 3.5rem;
-            border-radius: 8px;
+            padding: 1.5rem 4rem;
+            border-radius: 50px;
             font-weight: bold;
-            font-size: 1.4rem;
-            margin: 1.5rem 0;
+            font-size: 1.5rem;
+            margin: 2rem 0;
             transition: all 0.3s;
-            box-shadow: 0 5px 20px rgba(255, 107, 0, 0.5);
+            box-shadow: 0 8px 25px rgba(255, 107, 0, 0.4);
             text-transform: uppercase;
             border: none;
             cursor: pointer;
             text-decoration: none;
+            position: relative;
+            z-index: 1;
         }
         
         .cta-button:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(255, 107, 0, 0.7);
+            box-shadow: 0 12px 30px rgba(255, 107, 0, 0.6);
+            background: linear-gradient(135deg, #FF6B00 0%, #FF9E00 100%);
         }
         
         .guarantee {
             background: var(--fundo-cinza);
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin: 2rem 0;
-            text-align: left;
-        }
-        
-        .warning-update {
-            background: #fff8e1;
-            padding: 1rem;
-            text-align: center;
-            margin: 1rem auto;
-            max-width: 800px;
-            border-left: 4px solid #ffc107;
-        }
-        
-        .testimonials {
-            max-width: 800px;
-            margin: 3rem auto;
             padding: 2rem;
-            background: white;
-            border-radius: 10px;
+            border-radius: 12px;
+            margin: 2.5rem 0;
+            text-align: left;
+            position: relative;
+            z-index: 1;
+            border: 1px solid rgba(106, 53, 255, 0.1);
+        }
+        
+        .guarantee p {
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .guarantee p::before {
+            content: "✓";
+            color: var(--verde-sucesso);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .feature-card {
+            background: rgba(106, 53, 255, 0.05);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--roxo-tech);
+            transition: all 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(106, 53, 255, 0.1);
+        }
+        
+        .feature-card i {
+            font-size: 2.5rem;
+            color: var(--roxo-tech);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        
+        .feature-card h3 {
+            margin-top: 0;
+            color: var(--roxo-tech);
+            font-size: 1.4rem;
+        }
+        
+        .feature-card ul {
+            padding-left: 1.5rem;
+            margin-bottom: 0;
+        }
+        
+        .feature-card li {
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+        
+        .feature-card li::before {
+            content: "•";
+            color: var(--roxo-tech);
+            font-weight: bold;
+            position: absolute;
+            left: -1rem;
         }
         
         .testimonial-card {
             background: var(--fundo-cinza);
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            position: relative;
+            border-left: 4px solid var(--roxo-tech);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
         
         .testimonial-card p:first-child {
             font-style: italic;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            line-height: 1.7;
         }
         
         .testimonial-card strong {
             color: var(--roxo-tech);
+            font-size: 1.1rem;
         }
         
-        .security-badges {
-            background: white;
-            padding: 2rem;
-            text-align: center;
-            margin: 2rem auto;
-            max-width: 800px;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        .stars {
+            color: gold;
+            margin-top: 0.8rem;
+            font-size: 1.2rem;
         }
         
         .badge-grid {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
         }
         
         .badge-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             text-align: center;
+            transition: all 0.3s;
+            border: 1px solid rgba(106, 53, 255, 0.1);
+        }
+        
+        .badge-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
         
         .badge-item img {
-            height: 60px;
-            transition: transform 0.3s;
-        }
-        
-        .badge-item img:hover {
-            transform: scale(1.1);
+            height: 70px;
+            margin-bottom: 1rem;
+            object-fit: contain;
         }
         
         .badge-item p {
-            margin-top: 8px;
-            font-size: 0.9rem;
-            color: #555;
+            font-weight: bold;
+            color: var(--roxo-tech);
+            margin-bottom: 0;
+        }
+        
+        .module-item {
+            background: rgba(106, 53, 255, 0.05);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--roxo-tech);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .module-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 8px 20px rgba(106, 53, 255, 0.1);
+        }
+        
+        .module-item h3 {
+            margin-top: 0;
+            color: var(--roxo-tech);
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .module-item h3::before {
+            content: "▹";
+            color: var(--roxo-tech);
+            margin-right: 0.8rem;
+            font-size: 1.8rem;
+        }
+        
+        .module-item p {
+            margin-bottom: 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .module-item::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60px;
+            height: 60px;
+            background: url('images/padrao-decorativo.png') center/contain no-repeat;
+            opacity: 0.05;
+            z-index: 0;
+        }
+        
+        .bonus-section {
+            background: linear-gradient(135deg, rgba(255,107,0,0.1) 0%, rgba(106,53,255,0.1) 100%);
+            padding: 3rem;
+            border-radius: 15px;
+            margin: 3rem 0;
+            border: 2px dashed var(--roxo-tech);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .bonus-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/padrao-decorativo.png') center/cover no-repeat;
+            opacity: 0.03;
+            z-index: 0;
+        }
+        
+        .bonus-section h3 {
+            text-align: center;
+            color: var(--destaque-laranja);
+            font-size: 1.8rem;
+            margin-top: 0;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .bonus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .bonus-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: flex-start;
+            transition: all 0.3s;
+            border: 1px solid rgba(106, 53, 255, 0.1);
+        }
+        
+        .bonus-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-color: var(--roxo-tech);
+        }
+        
+        .bonus-item i {
+            font-size: 1.8rem;
+            color: var(--roxo-tech);
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .bonus-item h4 {
+            margin-top: 0;
+            color: var(--roxo-tech);
+            font-size: 1.2rem;
+        }
+        
+        .bonus-item p {
+            margin-bottom: 0;
+            font-size: 0.95rem;
+        }
+        
+        .creator-card {
+            text-align: center;
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .creator-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/padrao-decorativo.png') center/cover no-repeat;
+            opacity: 0.03;
+            z-index: 0;
+        }
+        
+        .creator-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--roxo-tech);
+            margin: 0 auto 1.5rem;
+            display: block;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .creator-card h2 {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .creator-card p {
+            position: relative;
+            z-index: 1;
         }
         
         .footer {
-            background: linear-gradient(135deg, var(--preto-profundo) 0%, #1a1a1a 100%);
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
             color: white;
-            padding: 3rem 1rem;
+            padding: 4rem 1rem;
             text-align: center;
-            margin-top: 3rem;
+            position: relative;
+            margin-top: 4rem;
+        }
+        
+        .footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--roxo-tech), var(--azul-energetico));
         }
         
         .footer-links {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            margin: 1.5rem 0;
+            gap: 2rem;
+            margin: 2rem 0;
             flex-wrap: wrap;
         }
         
         .footer-links a {
             color: var(--azul-energetico);
             text-decoration: none;
-            transition: color 0.3s;
+            transition: all 0.3s;
+            font-size: 1.1rem;
         }
         
         .footer-links a:hover {
@@ -190,150 +563,374 @@
         }
         
         .social-icons {
-            margin: 1.5rem 0;
+            margin: 2rem 0;
         }
         
         .social-icons a {
             color: white;
-            font-size: 1.5rem;
-            margin: 0 10px;
-            transition: color 0.3s;
+            font-size: 1.8rem;
+            margin: 0 15px;
+            transition: all 0.3s;
+            display: inline-block;
         }
         
         .social-icons a:hover {
             color: var(--azul-energetico);
+            transform: translateY(-3px);
         }
         
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .price { font-size: 2.5rem; }
-            .cta-button { padding: 1rem 2rem; font-size: 1.2rem; }
-            .badge-item img { height: 50px; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1.1rem; }
+            .price { font-size: 3rem; }
+            .cta-button { padding: 1.2rem 2.5rem; font-size: 1.3rem; }
+            .section { padding: 2rem 1.5rem; }
+            .features-grid { grid-template-columns: 1fr; }
+            .badge-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Seção Hero com CTA Imediato -->
-    <section class="hero">
-        <div class="container">
-            <h1>DOMINE AS FERRAMENTAS DE IA QUE ESTÃO DOMINANDO 2025</h1>
-            <p>O método completo para criar fluxos de renda automatizados com Inteligência Artificial</p>
-            <a href="#oferta" class="cta-button">QUERO MEU ACESSO VIP AGORA</a>
-        </div>
-    </section>
-    
-    <!-- Aviso sobre atualizações -->
-    <div class="warning-update">
-        <strong>ATUALIZADO PARA 2025:</strong> Este curso agora inclui as ferramentas mais poderosas como <u>GPT-4 Turbo, Gemini Advanced, Sora Video AI</u> e estratégias exclusivas de automação.
-    </div>
-    
-    <!-- Vídeo Incorporado -->
-    <div class="video-container">
-        <iframe width="100%" height="450" src="https://www.youtube.com/embed/Ygfz00F5_Vc?autoplay=0&modestbranding=1&rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-    
-    <!-- Seção de Benefícios -->
-    <section class="testimonials">
-        <h2 style="text-align: center; margin-bottom: 2rem; color: var(--roxo-tech);">O QUE VOCÊ VAI APRENDER:</h2>
-        
-        <div class="testimonial-card">
-            <p><i class="fas fa-check-circle" style="color: var(--verde-sucesso);"></i> <strong>Criação de Conteúdo Automatizado:</strong> Gere artigos, vídeos e posts em minutos usando IA</p>
-        </div>
-        
-        <div class="testimonial-card">
-            <p><i class="fas fa-check-circle" style="color: var(--verde-sucesso);"></i> <strong>Chatbots que Vendem 24/7:</strong> Sistemas de atendimento automático que convertem visitantes</p>
-        </div>
-        
-        <div class="testimonial-card">
-            <p><i class="fas fa-check-circle" style="color: var(--verde-sucesso);"></i> <strong>Vídeos Realistas com IA:</strong> Crie vídeos profissionais sem aparecer na câmera</p>
-        </div>
-    </section>
-    
-    <!-- Depoimentos Reais -->
-    <section class="testimonials">
-        <h2 style="text-align: center; margin-bottom: 2rem; color: var(--roxo-tech);">RESULTADOS REAIS DE NOSSOS ALUNOS:</h2>
-        
-        <div class="testimonial-card">
-            <p>"Em 45 dias consegui substituir meu salário de CLT. Hoje trabalho 3h/dia com automações de IA e faturo R$12.700/mês. Esse curso mudou minha vida!"</p>
-            <p><strong>- Marcelo Silva, 32 anos (Ex-analista de RH)</strong></p>
-        </div>
-        
-        <div class="testimonial-card">
-            <p>"Implementei os sistemas de atendimento automático e minha agência digital cresceu 340% em 4 meses. O módulo de chatbots foi revolucionário!"</p>
-            <p><strong>- Carla Mendes, 29 anos (Dona de Agência Marketing)</strong></p>
-        </div>
-    </section>
-    
-    <!-- Seção de Oferta (COM PREÇOS ATUALIZADOS) -->
-    <section id="oferta" class="offer">
-        <h2 style="color: var(--destaque-laranja);">OFERTA COM DESCONTO ESPECIAL PARA 2025</h2>
-        <p>De <s style="color: #d32f2f;">R$ 1.497,00</s> por apenas:</p>
-        <div class="price">R$ 279,90</div>
-        <p>ou 12x de R$ 28,95 no cartão</p>
-        
-        <a href="https://pay.kiwify.com.br/OUx0Hgb?afid=oCbQn0Xc" class="cta-button">QUERO APRENDER IA EM 2025!</a>
-        
-        <div class="guarantee">
-            <p>✅ <strong>7 Dias de Garantia Incondicional</strong> - Devolvemos seu dinheiro sem perguntas</p>
-            <p>✅ <strong>Acesso Vitalício + Atualizações</strong> - Novas ferramentas de 2025 inclusas</p>
-            <p>✅ <strong>Comunidade Exclusiva</strong> - Networking com os melhores profissionais</p>
-            <p>✅ <strong>Suporte Diário</strong> - Nossa equipe responde em até 2 horas</p>
-        </div>
-        
-        <p style="color: #d32f2f; font-weight: bold; margin-top: 1rem;">⏳ PROMOÇÃO VÁLIDA ATÉ 30/04/2025!</p>
-    </section>
+    <div class="content-wrapper">
+        <!-- Seção Hero -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>DOMINE AS FERRAMENTAS DE IA QUE ESTÃO DOMINANDO 2025</h1>
+                <p>O método completo para criar fluxos de renda automatizados com ChatGPT, Midjourney e outras IAs revolucionárias</p>
+                <a href="https://pay.kiwify.com.br/OUx0Hgb?afid=oCbQn0Xc" class="cta-button">QUERO MEU ACESSO VIP AGORA</a>
+            </div>
+        </section>
 
-    <!-- Selos de Segurança - VERSÃO FUNCIONANDO -->
-    <div class="security-badges">
-        <h3 style="color: var(--roxo-tech); margin-bottom: 0;">
-            <i class="fas fa-shield-alt"></i> COMPRA 100% SEGURA
-        </h3>
-        <div class="badge-grid">
-            <div class="badge-item">
-                <img src="https://i.imgur.com/eCgNd3Y.png" alt="Site Seguro">
-                <p>Site Verificado</p>
-            </div>
-            <div class="badge-item">
-                <img src="https://i.imgur.com/KSHqWqX.png" alt="SSL">
-                <p>Dados Protegidos</p>
-            </div>
-            <div class="badge-item">
-                <img src="https://i.imgur.com/5XvZ5tG.png" alt="Garantia">
-                <p>Garantia</p>
-            </div>
-            <div class="badge-item">
-                <img src="https://i.imgur.com/JH9WK2D.png" alt="Pagamento Seguro">
-                <p>Pagamento Seguro</p>
-            </div>
+        <!-- Vídeo Incorporado -->
+        <div class="video-container">
+            <iframe width="100%" height="450" src="https://www.youtube.com/embed/Ygfz00F5_Vc?autoplay=0&modestbranding=1&rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-    </div>
-    
-    <!-- Rodapé Atualizado -->
-    <footer class="footer">
-        <h3>IA: O Novo Ouro Digital</h3>
-        <div class="footer-links">
-            <a href="#">Termos de Uso</a>
-            <a href="#">Política de Privacidade</a>
-            <a href="#">Contato</a>
-            <a href="#">Dúvidas Frequentes</a>
-        </div>
-        <div class="social-icons">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-tiktok"></i></a>
-        </div>
-        <p>© 2025 IA: O Novo Ouro Digital - Todos os direitos reservados</p>
-        <p style="font-size: 0.8rem; margin-top: 1rem; opacity: 0.7;">
-            Este produto não garante resultados financeiros. Seu sucesso depende do seu esforço.
-        </p>
-    </footer>
 
-    <!-- Script para garantir que o link de afiliado funcione -->
+        <!-- Sobre o Curso -->
+        <section class="section">
+            <div class="section-content">
+                <h2><i class="fas fa-robot"></i> SOBRE O CURSO</h2>
+                <p style="font-size: 1.2rem; line-height: 1.8; text-align: center; max-width: 800px; margin: 0 auto 3rem;">
+                    Prepare-se para uma imersão profunda na tecnologia que revolucionou o mundo desde a invenção da internet: a Inteligência Artificial. Neste curso inovador e abrangente, você dominará as ferramentas mais avançadas como ChatGPT, Midjourney, Leonardo AI e outras líderes do mercado.
+                </p>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-bullseye"></i>
+                        <h3>FOCO PRINCIPAL</h3>
+                        <ul>
+                            <li>Gerar renda online utilizando IA de forma ética e escalável</li>
+                            <li>Estratégias práticas e comprovadas que já geraram mais de R$1 milhão em vendas</li>
+                            <li>Criação de negócios digitais automatizados 24/7</li>
+                            <li>Automatização de processos para economizar até 20 horas semanais</li>
+                            <li>Monetização de habilidades com IA em múltiplos nichos</li>
+                            <li>Domínio completo das ferramentas mais avançadas do mercado</li>
+                            <li>Métodos exclusivos de criação de conteúdo em massa</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <i class="fas fa-project-diagram"></i>
+                        <h3>APLICAÇÕES</h3>
+                        <ul>
+                            <li>Melhorar sua carreira profissional com automações inteligentes</li>
+                            <li>Criar renda extra online com serviços baseados em IA</li>
+                            <li>Automatizar seu trabalho atual para focar no que realmente importa</li>
+                            <li>Desenvolver produtos digitais como e-books, cursos e artes</li>
+                            <li>Oferecer serviços especializados em criação de conteúdo</li>
+                            <li>Criar conteúdo automatizado para redes sociais</li>
+                            <li>Desenvolver chatbots inteligentes para atendimento ao cliente</li>
+                            <li>Produzir vídeos profissionais sem aparecer na câmera</li>
+                            <li>Criar artes digitais para venda em marketplaces</li>
+                            <li>Automatizar processos de copywriting e criação de anúncios</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>HABILIDADES</h3>
+                        <ul>
+                            <li>Domínio de ferramentas de IA como ChatGPT, Midjourney, Leonardo AI</li>
+                            <li>Marketing digital aplicado com automações inteligentes</li>
+                            <li>Gestão de produtividade com técnicas de eficiência máxima</li>
+                            <li>Mentalidade empreendedora digital</li>
+                            <li>Criação de conteúdo automatizado em escala</li>
+                            <li>Vendas e negociação com auxílio de IA</li>
+                            <li>Design gráfico assistido por inteligência artificial</li>
+                            <li>Produção de vídeos profissionais sem equipamentos caros</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Criador do Curso -->
+        <section class="section">
+            <div class="section-content">
+                <div class="creator-card">
+                    <img src="images/foto-preguica.jpg" alt="Preguiça Artificial - Canal de IA" class="creator-image">
+                    <h2 style="text-align: center; width: 100%;">LUCAS MARTINS SILVA</h2>
+                    <p style="font-weight: bold; color: var(--roxo-tech); margin-bottom: 1.5rem;">Criador do Canal "Preguiça Artificial" | Especialista em IA</p>
+                    <p style="font-style: italic; max-width: 600px; margin: 0 auto 1.5rem; font-size: 1.1rem;">
+                        "Com meus tutoriais gratuitos no YouTube conquistei o respeito de mais de 200 mil inscritos. Imagine o que você pode alcançar com este curso completo!"
+                    </p>
+                    <p>
+                        Especialista em IA com mais de 5 anos de experiência no mercado digital. Formado em Ciência da Computação pela USP, acompanha o desenvolvimento de inteligência artificial desde seus primórdios. Já treinou mais de 10.000 alunos e seus métodos são reconhecidos por grandes nomes do mercado digital.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Depoimentos Reais -->
+        <section class="section">
+            <div class="section-content">
+                <h2><i class="fas fa-medal"></i> RESULTADOS REAIS</h2>
+                
+                <div class="testimonial-card">
+                    <p>"Comprei o curso sem muitas expectativas e me surpreendi! Em 3 semanas já estava faturando R$3.200/mês criando artes com Midjourney para clientes. O módulo de negociação foi o que fez toda diferença!"</p>
+                    <p><strong>- Ricardo, 28 anos (Designer)</strong></p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p>"O Lucas explica de forma tão clara que mesmo sendo leigo em tecnologia consegui criar meu primeiro chatbot de vendas. Em 2 meses meu faturamento online subiu 180%. Vale cada centavo!"</p>
+                    <p><strong>- Ana Clara, 35 anos (Empreendedora)</strong></p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p>"Já tinha gasto muito com outros cursos de IA, mas nenhum tão completo quanto este. Aprendi a criar vídeos com IA e hoje tenho um canal com 50k seguidores. O suporte do Lucas é excepcional!"</p>
+                    <p><strong>- Felipe, 24 anos (Produtor de Conteúdo)</strong></p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p>"Como professora, nunca imaginei que poderia usar IA para criar materiais didáticos. Este curso abriu minha mente e agora economizo 15h semanais no meu trabalho!"</p>
+                    <p><strong>- Mariana, 42 anos (Educadora)</strong></p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conteúdo do Curso -->
+        <section class="section">
+            <div class="section-content">
+                <h2><i class="fas fa-graduation-cap"></i> CONTEÚDO DO CURSO</h2>
+                
+                <div class="module-item">
+                    <h3>Módulo 1: ChatGPT - A IA que mudou os rumos da humanidade</h3>
+                    <p>Do básico ao avançado, desde criação de conta até super prompts avançados que podem elevar seus negócios online. Inclui dicas de quem já faturou milhares com IA.</p>
+                </div>
+                
+                <div class="module-item">
+                    <h3>Módulo 2: Midjourney - O poder da Arte nas suas mãos</h3>
+                    <p>Crie imagens profissionais e aprenda a monetizá-las. O módulo que introduziu Lucas no universo das IAs, com tudo que ele aprendeu na prática.</p>
+                </div>
+                
+                <div class="module-item">
+                    <h3>Módulo 3: Produtividade Com Microsoft Edge - Bing + Dall E</h3>
+                    <p>Use o ChatGPT-4 gratuitamente e descubra funções exclusivas de produtividade que fazem diferença real no dia a dia.</p>
+                </div>
+                
+                <div class="module-item">
+                    <h3>Módulo 4: IAs secretas que resolvem problemas!</h3>
+                    <p>Ferramentas simples mas poderosas para empreendedores: melhorar imagens, criar músicas sem direitos autorais, gerar vídeos e alternativas ao ChatGPT.</p>
+                </div>
+                
+                <div class="module-item">
+                    <h3>Módulo 5: Stable Diffusion - A Magia da Arte no seu PC</h3>
+                    <p>Alternativa gratuita ao Midjourney e base para plataformas como Leonardo AI e SeaArt.</p>
+                </div>
+                
+                <div class="module-item">
+                    <h3>Módulo 6: Leonardo AI - Crie Artes Incríveis Online</h3>
+                    <p>Domine recursos exclusivos como Tiling, Inpaint, Outpaint e ControlNET.</p>
+                </div>
+                
+                <div class="module-item">
+                    <h3>Módulo 7: Google Gemini - O maior rival do GPT</h3>
+                    <p>Configuração e uso das funcionalidades avançadas do principal concorrente do ChatGPT.</p>
+                </div>
+                
+                <div class="module-item">
+                    <h3>Módulo 8: Ideias de Negócio - Monetize com IAs</h3>
+                    <p>O ápice do curso: como criar produtos, monetizar habilidades com IA e estratégias para alcançar seu público-alvo.</p>
+                </div>
+                
+                <div class="bonus-section">
+                    <h3><i class="fas fa-gift"></i> BÔNUS EXCLUSIVOS <i class="fas fa-gift"></i></h3>
+                    <div class="bonus-grid">
+                        <div class="bonus-item">
+                            <i class="fas fa-book"></i>
+                            <div>
+                                <h4>E-book "Faturando com IA" (Valor: R$97)</h4>
+                                <p>História da criação das IAs + estratégias de monetização passo a passo com cases reais de alunos que faturaram mais de R$5.000/mês</p>
+                            </div>
+                        </div>
+                        <div class="bonus-item">
+                            <i class="fas fa-magic"></i>
+                            <div>
+                                <h4>Biblioteca de Prompts Premium (Valor: R$147)</h4>
+                                <p>Todos os prompts usados no curso + acervos pagos inclusos + atualizações mensais com novos templates</p>
+                            </div>
+                        </div>
+                        <div class="bonus-item">
+                            <i class="fas fa-paint-brush"></i>
+                            <div>
+                                <h4>Adobe Firefly Masterclass (Valor: R$197)</h4>
+                                <p>Módulo completo sobre a poderosa ferramenta de design da Adobe com técnicas profissionais de edição</p>
+                            </div>
+                        </div>
+                        <div class="bonus-item">
+                            <i class="fas fa-video"></i>
+                            <div>
+                                <h4>IA Vídeos Profissionais (Valor: R$167)</h4>
+                                <p>Produção de vídeos com IA, mesmo sem aparecer na câmera + técnicas de edição avançada</p>
+                            </div>
+                        </div>
+                        <div class="bonus-item">
+                            <i class="fas fa-comments"></i>
+                            <div>
+                                <h4>Chatbots de Vendas (Valor: R$127)</h4>
+                                <p>Guia completo para criar chatbots que vendem 24/7 sem intervenção humana</p>
+                            </div>
+                        </div>
+                        <div class="bonus-item">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <h4>Comunidade VIP (Valor: R$97/mês)</h4>
+                                <p>Acesso a grupo exclusivo com mentoria semanal e networking com outros alunos</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p style="text-align: center; font-weight: bold; color: var(--destaque-laranja); margin-top: 2rem; font-size: 1.2rem;">
+                        VALOR TOTAL DOS BÔNUS: <span style="text-decoration: line-through;">R$832</span> <span style="font-size: 1.5rem;">GRÁTIS</span> PARA OS 100 PRIMEIROS ALUNOS!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Oferta -->
+        <section id="oferta" class="offer">
+            <div class="offer-content">
+                <h2 style="color: var(--destaque-laranja); margin-top: 0; font-size: 2.2rem;">OFERTA POR TEMPO LIMITADO</h2>
+                <div class="price">R$ 279,90</div>
+                <p style="font-size: 1.3rem; margin: 1rem 0 2rem;">ou 12x de R$ 28,10 no cartão</p>
+                
+                <a href="https://pay.kiwify.com.br/OUx0Hgb?afid=oCbQn0Xc" class="cta-button">
+                    <i class="fas fa-arrow-right"></i> GARANTIR MEU ACESSO AGORA
+                </a>
+                
+                <div class="guarantee">
+                    <p><strong>+80 videoaulas</strong> com conteúdo 100% original e atualizado semanalmente</p>
+                    <p><strong>Acesso vitalício</strong> e todas atualizações futuras inclusas sem custo adicional</p>
+                    <p><strong>Certificado digital</strong> de conclusão após o término do curso</p>
+                    <p><strong>7 dias de garantia incondicional</strong> - devolução do seu dinheiro sem perguntas</p>
+                    <p><strong>Suporte prioritário</strong> via WhatsApp para tirar todas suas dúvidas</p>
+                </div>
+                
+                <p style="color: #d32f2f; font-weight: bold; font-size: 1.2rem; margin-top: 1.5rem;">
+                    <i class="fas fa-exclamation-triangle"></i> OFERTA VÁLIDA APENAS ATÉ <span id="countdown">30/04/2025</span>
+                </p>
+            </div>
+        </section>
+
+        <!-- Selos de Segurança -->
+        <section class="section">
+            <div class="section-content">
+                <h2><i class="fas fa-lock"></i> COMPRA 100% SEGURA</h2>
+                <div class="badge-grid">
+                    <div class="badge-item">
+                        <img src="images/site-seguro.png" alt="Site Seguro">
+                        <p>Site Verificado</p>
+                    </div>
+                    <div class="badge-item">
+                        <img src="images/ssl.png" alt="SSL">
+                        <p>Dados Protegidos</p>
+                    </div>
+                    <div class="badge-item">
+                        <img src="images/garantia.png" alt="Garantia">
+                        <p>Garantia</p>
+                    </div>
+                    <div class="badge-item">
+                        <img src="images/pagamento-seguro.png" alt="Pagamento Seguro">
+                        <p>Pagamento Seguro</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rodapé -->
+        <footer class="footer">
+            <h3 style="margin-top: 0; font-size: 1.8rem;">IA: O NOVO OURO DIGITAL</h3>
+            <div class="footer-links">
+                <a href="#">Termos de Uso</a>
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Contato</a>
+                <a href="#">Dúvidas Frequentes</a>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+            </div>
+            <p>© 2025 IA: O Novo Ouro Digital - Todos os direitos reservados</p>
+            <p style="font-size: 0.8rem; opacity: 0.8; margin-top: 1rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Este produto não garante resultados financeiros. Seu sucesso depende do seu esforço e dedicação. Os depoimentos apresentados são reais, mas não representam resultados típicos.
+            </p>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
     <script>
-        document.querySelector('.cta-button').addEventListener('click', function() {
-            window.location.href = "https://pay.kiwify.com.br/OUx0Hgb?afid=oCbQn0Xc";
+        // Contador de tempo limitado
+        function updateCountdown() {
+            const now = new Date();
+            const endDate = new Date("2025-04-30T23:59:59");
+            const diff = endDate - now;
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            
+            document.getElementById('countdown').innerHTML = 
+                `${days} DIAS E ${hours} HORAS`;
+        }
+        
+        setInterval(updateCountdown, 3600000);
+        updateCountdown();
+        
+        // Garante que todos os links de afiliado funcionem
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.location.href = "https://pay.kiwify.com.br/OUx0Hgb?afid=oCbQn0Xc";
+            });
         });
     </script>
 </body>
